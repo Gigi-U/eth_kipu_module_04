@@ -257,3 +257,60 @@ Las dependencias son módulos de código (también conocidos como paquetes o lib
         ```bash
         npm uninstall nombre-del-paquete --save-dev
         ```
+
+
+## INICIALIZAR:
+
+```bash
+    node server.js
+```
+## HARDHAT:
+
+1. Configura Hardhat
+
+```bash
+    npm install --save-dev hardhat
+```
+```bash
+    npx hardhat
+```
+2. Configura Visual Studio Code
+
+
+Scripts en package.json: Agrega scripts en package.json para usar Hardhat fácilmente:
+
+{
+  "scripts": {
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile",
+    "deploy": "npx hardhat run scripts/deploy.js"
+  }
+}
+Configura .gitignore: Evita subir archivos innecesarios al control de versiones:
+
+node_modules/
+.env
+cache/
+artifacts/
+
+3. Ejecución de Hardhat en Desarrollo
+Compilar contratos:
+```bash
+    npm run compile
+```
+
+Ejecutar pruebas:
+
+```bash
+    npm run test
+```
+Implementar contratos localmente: Usa la red de desarrollo integrada de Hardhat:
+
+```bash
+    npx hardhat node
+```
+En otra terminal, ejecuta el script de despliegue:
+
+```bash
+    npm run deploy
+```
